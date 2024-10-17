@@ -31,7 +31,7 @@ body {
 
 #content-container {
     display: grid;
-    grid-template-columns: repeat(6, 200px); /* 6 fixed-width columns */
+    grid-template-columns: repeat(5, 200px); /* 6 fixed-width columns */
     gap: 30px; /* Space between items */
     justify-content: center; /* Center the grid */
     margin: 0 auto; /* Center the content container within its parent */
@@ -178,6 +178,49 @@ body {
     color: #fff;
     border-color: #cecece;
 }
+/* Styling for the "Posted by" text under each post box */
+/* Styling for the post container */
+.post-box {
+    width: 200px; /* Set a fixed width for consistency */
+    height: 100px; /* Set a fixed height for consistency */
+    border: 1px solid #cecece;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    overflow: hidden; /* Hide overflow for consistent sizing */
+}
+
+/* Styling for the post container */
+.post-box {
+    width: 200px; /* Set a fixed width for consistency */
+    height: auto; /* Allow height to adjust based on content */
+    border: 1px solid #cecece;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out elements vertically */
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    overflow: hidden; /* Hide overflow for consistent sizing */
+}
+
+/* Styling for the "Posted by" text inside each post box */
+.posted-by {
+    font-size: 12px;
+    color: #000000;
+    margin-top: 5px;  /* Small margin to create space above the username text */
+    text-align: center;  /* Center the text */
+    padding: 5px 0;
+    width: 100%;  /* Make it as wide as the post box */
+    box-sizing: border-box; /* Ensure padding is within the element width */
+}
+
+
 
 @media (max-width: 768px) {
     #content-container {

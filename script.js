@@ -10,7 +10,7 @@ fetch('https://api.are.na/v2/channels/' + channel + '/contents')
     })
     .then(data => {
         console.log("API Response:", data); // Log API response for debugging
-        const posts = data.contents.reverse();
+        const posts = data.contents.reverse(); // Display posts in reverse order
 
         if (posts.length === 0) {
             console.log("No content found in this channel.");
@@ -45,6 +45,22 @@ fetch('https://api.are.na/v2/channels/' + channel + '/contents')
                 postBox.appendChild(linkElement);
             }
 
+            // Add the "Posted by" section inside the post box, below the content
+            const usernameElement = document.createElement("p");
+            usernameElement.classList.add("posted-by");
+
+            // Get the author's username, fallback to "Unknown User" if not available
+            if (post.connected_user && post.connected_user.username) {
+                usernameElement.textContent = `Posted by: ${post.connected_user.username}`;
+            } else if (post.user && post.user.username) {
+                usernameElement.textContent = `Posted by: ${post.user.username}`;
+            } else {
+                usernameElement.textContent = "Posted by: Unknown User";
+            }
+
+            // Append the username element at the bottom of the post box
+            postBox.appendChild(usernameElement);
+
             // Append the post container to the content container
             contentContainer.appendChild(postBox);
         });
@@ -53,7 +69,6 @@ fetch('https://api.are.na/v2/channels/' + channel + '/contents')
         console.error('There was a problem with the fetch operation:', error);
     });
 
-    
 
 // Array of background images
 const backgrounds = [
