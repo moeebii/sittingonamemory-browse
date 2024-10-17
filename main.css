@@ -206,7 +206,7 @@ body {
     align-items: center;
     padding: 10px;
     position: relative;
-    overflow: hidden; /* Hide overflow for consistent sizing */
+    overflow: auto; /* Allow for scrolling */
 }
 
 /* Styling for the "Posted by" text inside each post box */
