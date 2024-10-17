@@ -185,6 +185,25 @@ body {
         padding: 10px;
     }
 
+    #content-container {
+        grid-template-columns: repeat(1, 200px); /* 2 fixed-width columns for smaller screens */
+        gap: 15px; /* Smaller gap between posts */
+        overflow-y: auto; /* Allow vertical scrolling for smaller screens */
+        overflow-x: scroll; /* Allow horizontal scrolling if needed */
+        padding: 10px;
+        width: 100vw; /* Ensure full-width on mobile */
+        height: 80vh; /* Adjust height to fit within the viewport */
+    }
+
+    /* Post box will remain the same size */
+    .post-box {
+        width: 200px;
+        height: 100px;
+    }
+
+
+    
+
     #added-by {
         position: absolute;
         bottom: 50px;
