@@ -1,0 +1,197 @@
+/* Custom font face definition */
+@font-face {
+    font-family: 'ABC Synt Unlicensed Trial';
+    src: url('ABCSyntUnlicensedTrial-Regular.woff2') format('woff2'),
+         url('ABCSyntUnlicensedTrial-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* General body styling */
+html, body {
+    font-family: 'ABC Synt Unlicensed Trial';
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+body {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+#content-container {
+    display: grid;
+    grid-template-columns: repeat(6, 200px); /* 6 fixed-width columns */
+    gap: 30px; /* Space between items */
+    justify-content: center; /* Center the grid */
+    margin: 0 auto; /* Center the content container within its parent */
+}
+
+
+
+.post-box {
+    width: 200px; /* Set a fixed width for consistency */
+    height: 100px; /* Set a fixed height for consistency */
+    border: 1px solid #cecece;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    overflow: hidden; /* Hide overflow for consistent sizing */
+
+}
+
+
+.post-box img {
+    max-width: 100%; /* Ensure the image fits within the box */
+    max-height: 100%; /* Ensure the image doesn't overflow vertically */
+    object-fit: cover; /* Cover the available space but maintain aspect ratio */
+    margin: 3px 0;
+}
+
+
+.post-box p {
+    font-size: 10px;
+    color: #000000;
+    margin: 10px 0; /* Add some margin to separate text from image */
+    overflow: auto; /* Allow for scrolling */
+    text-overflow: ellipsis;
+    display: -webkit-box; /* This creates a box for the text */
+    -webkit-box-orient: vertical; /* Sets the box to vertical orientation */
+    text-align: center; /* Center-align text */
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative; /* Positioning context for scrollbar */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.post-box p::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+}
+
+/* Hide scrollbar for Firefox */
+.post-box p {
+    scrollbar-width: none; /* Hides the scrollbar for Firefox */
+}
+
+.post-box img {
+    max-width: 100%; /* Make the image responsive */
+    max-height: 100%; /* Allow image to fit within the box height */
+    object-fit: contain; /* Preserve aspect ratio while ensuring it fits in box */
+    margin: 10px 0; /* Add margin above and below the image */
+    background-color: #fff; /* Set background to white if image doesn't fill the space */
+}
+
+/* Links in the post */
+.post-box a {
+    color: #3498db;
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+}
+
+.post-box a:hover {
+    text-decoration: underline;
+}
+
+/* Popup container */
+.popup-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center the content */
+    z-index: 9999; /* Ensure it appears above other content */
+}
+
+/* Popup content */
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto; /* Allow scrolling if content exceeds the size */
+    position: relative;
+}
+
+/* Close button */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Styling for image in popup */
+.popup-content img {
+    max-width: 100%;
+    max-height: 60vh; /* Restrict height of the image */
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Bottom-left buttons container */
+#bottom-left-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Individual button styling */
+.button {
+    padding: 3px 8px;
+    font-size: 12px;
+    background-color: #fff;
+    border: 1px solid #cecece;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #cecece;
+    color: #fff;
+    border-color: #cecece;
+}
+
+@media (max-width: 768px) {
+    #content-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #added-by {
+        position: absolute;
+        bottom: 50px;
+        left: 20px;
+        font-size: 12px;
+        color: white;
+        display: flex;
+        align-items: center;
+    }
+}
